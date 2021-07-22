@@ -1,0 +1,26 @@
+.main {
+  background: $light-grayish-cyan;
+  height: 100vh;
+
+  &__logo {
+    text-align: center;
+
+    font: {
+      size: $font-med;
+      weight: 700;
+    }
+
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    color: $very-dark-cyan;
+    transform: translateY(-20px);
+  }
+
+  .calculator {
+    width: 100%;
+    height: auto;
+    background: $white;
+    border-radius: 1.5rem;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+  }
+}

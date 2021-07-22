@@ -1,0 +1,56 @@
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Space Mono', monospace;
+}
+
+a,
+a:visited,
+a:hover {
+  text-decoration: none;
+}
+
+// flexbox
+.flex {
+  display: flex;
+
+  &-jc-sb {
+    justify-content: space-between;
+  }
+
+  &-jc-c {
+    justify-content: center;
+  }
+
+  &-ai-c {
+    align-items: center;
+  }
+
+  &-fd-col {
+    flex-direction: column;
+  }
+}
+
+// grid
+.grid {
+  display: grid;
+
+  &-jc-c {
+    justify-content: center;
+  }
+
+  &-ac-c {
+    align-content: center;
+  }
+}
