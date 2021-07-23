@@ -1,0 +1,7 @@
+@mixin custom-grid-tmp-cols($size) {
+  grid-template-columns: #{$size};
+}
+
+@mixin custom-grid-fit($min, $max) {
+  grid-template-columns: repeat(auto-fit, minmax(#{$min}, #{$max}));
+}
