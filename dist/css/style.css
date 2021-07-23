@@ -109,16 +109,6 @@ button:not(:nth-last-child(1)) {
       align-content: center;
 }
 
-.grid-tmp-cols {
-  -ms-grid-columns: 1fr;
-      grid-template-columns: 1fr;
-}
-
-.grid-tmp-cols-auto-fit {
-  -ms-grid-columns: 148px 148px;
-      grid-template-columns: 148px 148px;
-}
-
 .grid-gap {
   gap: 1rem;
 }
@@ -160,25 +150,19 @@ button:not(:nth-last-child(1)) {
   border-radius: 4px;
 }
 
-.bill__field > p {
-  margin: 0 1.25rem 0 0;
-  text-align: right;
-  width: 100%;
-  font-size: 1.5rem;
-  font-weight: 700;
-}
-
 .bill img.dollar-icon {
   position: absolute;
   margin: 0 1.25rem;
 }
 
 .tip-buttons__wrapper {
+  -ms-grid-columns: (minmax(9.25rem, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(9.25rem, 1fr));
   margin-top: 1.25rem;
+  grid-gap: .625rem;
 }
 
 .tip-buttons__btn {
-  width: 9.25rem;
   height: 3rem;
 }
 
