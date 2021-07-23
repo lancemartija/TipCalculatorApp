@@ -16,51 +16,12 @@
     transform: translateY(-20px);
   }
 
-  .container {
+  &__container {
     width: 100%;
     height: auto;
     background: $white;
     border-radius: 1.5rem;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
-
-    .content {
-      margin: 0 2rem;
-
-      &__bill {
-        &--field {
-          width: 100%;
-          height: 3rem;
-          background: $lighter-grayish-cyan;
-          border-radius: 4px;
-
-          >p {
-            margin: 0 1.25rem 0 0;
-            text-align: right;
-            width: 100%;
-
-            font: {
-              size: $font-lg;
-              weight: 700;
-            }
-          }
-        }
-      }
-    }
-
-    .btn:not(:nth-last-child(1)) {
-      width: 9.25rem;
-      height: 3rem;
-
-      &:hover {
-        background: rgba($color: $strong-cyan, $alpha: .4);
-        color: $very-dark-cyan;
-      }
-
-      &.active {
-        background: $strong-cyan;
-        color: $very-dark-cyan;
-      }
-    }
   }
 }
 
