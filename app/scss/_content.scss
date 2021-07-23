@@ -21,10 +21,11 @@
       }
     }
   }
-}
 
-img.dollar-icon {
-  margin: 0 1.25rem;
+  img.dollar-icon {
+    position: absolute;
+    margin: 0 1.25rem;
+  }
 }
 
 .tip-buttons {
@@ -35,10 +36,6 @@ img.dollar-icon {
   &__btn {
     width: 9.25rem;
     height: 3rem;
-
-    .form__input {
-      padding: 0 .625rem;
-    }
 
     &:not(:nth-last-child(1)) {
 
@@ -52,5 +49,20 @@ img.dollar-icon {
         color: $very-dark-cyan;
       }
     }
+  }
+}
+
+.num-of-ppl {
+  &__field {
+    width: 100%;
+    height: 3rem;
+    margin-top: .75rem;
+    background: $lighter-grayish-cyan;
+    border-radius: 4px;
+  }
+
+  img.person-icon {
+    position: absolute;
+    margin: 0 1.25rem;
   }
 }
