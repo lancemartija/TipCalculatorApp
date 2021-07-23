@@ -9,17 +9,6 @@
     margin-top: .75rem;
     background: $lighter-grayish-cyan;
     border-radius: 4px;
-
-    >p {
-      margin: 0 1.25rem 0 0;
-      text-align: right;
-      width: 100%;
-
-      font: {
-        size: $font-lg;
-        weight: 700;
-      }
-    }
   }
 
   img.dollar-icon {
@@ -30,11 +19,12 @@
 
 .tip-buttons {
   &__wrapper {
+    @include custom-grid-fit("9.25rem", "1fr");
     margin-top: 1.25rem;
+    grid-gap: .625rem;
   }
 
   &__btn {
-    width: 9.25rem;
     height: 3rem;
 
     &:not(:nth-last-child(1)) {
