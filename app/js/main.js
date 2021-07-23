@@ -1,4 +1,4 @@
-const button = document.querySelectorAll(".btn");
+const button = document.querySelectorAll(".tip-buttons__btn");
 let active = false;
 
 if (button) {
