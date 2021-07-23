@@ -1,32 +1,46 @@
-.content {
-  &__wrapper {
-    margin: 0 2rem;
-  }
+.content__wrapper {
+  margin: 0 2rem;
+}
 
-  &__bill {
-    &--field {
+.bill {
+  &__field {
+    width: 100%;
+    height: 3rem;
+    margin-top: .75rem;
+    background: $lighter-grayish-cyan;
+    border-radius: 4px;
+
+    >p {
+      margin: 0 1.25rem 0 0;
+      text-align: right;
       width: 100%;
-      height: 3rem;
-      background: $lighter-grayish-cyan;
-      border-radius: 4px;
 
-      >p {
-        margin: 0 1.25rem 0 0;
-        text-align: right;
-        width: 100%;
-
-        font: {
-          size: $font-lg;
-          weight: 700;
-        }
+      font: {
+        size: $font-lg;
+        weight: 700;
       }
     }
   }
+}
 
-  &__buttons {
-    .btn:not(:nth-last-child(1)) {
-      width: 9.25rem;
-      height: 3rem;
+img.dollar-icon {
+  margin: 0 1.25rem;
+}
+
+.tip-buttons {
+  &__wrapper {
+    margin-top: 1.25rem;
+  }
+
+  &__btn {
+    width: 9.25rem;
+    height: 3rem;
+
+    .form__input {
+      padding: 0 .625rem;
+    }
+
+    &:not(:nth-last-child(1)) {
 
       &:hover {
         background: rgba($color: $strong-cyan, $alpha: .4);
@@ -39,8 +53,4 @@
       }
     }
   }
-}
-
-.dollar-icon {
-  margin: 0 1.25rem;
 }
