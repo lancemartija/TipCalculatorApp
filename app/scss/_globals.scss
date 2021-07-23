@@ -12,14 +12,41 @@ html {
 body {
   padding: 0;
   margin: 0;
-  font-family: 'Space Mono', monospace;
+
+  font: {
+    family: 'Space Mono', monospace;
+    size: $font-sm;
+    weight: 400;
+  }
+
+  color: $very-dark-cyan;
+}
+
+h1 {
   font-size: $font-sm;
+  margin: 39px 0 0 0;
 }
 
 a,
 a:visited,
 a:hover {
   text-decoration: none;
+}
+
+button:not(:nth-last-child(1)) {
+  background: $very-dark-cyan;
+  color: $white;
+  cursor: pointer;
+
+  border: 0 {
+    radius: 4px;
+  }
+
+  font: {
+    family: 'Space Mono', monospace;
+    size: $font-lg;
+    weight: 700;
+  }
 }
 
 // flexbox
@@ -53,5 +80,13 @@ a:hover {
 
   &-ac-c {
     align-content: center;
+  }
+
+  &-tmp-cols-auto-fit {
+    grid-template-columns: 148px 148px;
+  }
+
+  &-gap {
+    gap: 1rem;
   }
 }
