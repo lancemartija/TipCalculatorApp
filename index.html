@@ -13,9 +13,9 @@
 </head>
 
 <body>
-  <div class="main grid grid-jc-c grid-ac-c">
+  <div class="main grid grid-ac-c">
     <div class="main__logo">spli<br>tter</div>
-    <div class="main__container">
+    <div class="main__container grid">
       <div class="content__wrapper">
         <section class="bill">
           <h1>Bill</h1>
@@ -26,7 +26,7 @@
         </section>
         <section class="tip-buttons">
           <h1>Select Tip %</h1>
-          <div class="tip-buttons__wrapper grid grid-tmp-cols-auto-fit grid-gap">
+          <div class="tip-buttons__wrapper grid">
             <button id="btn-1" class="tip-buttons__btn">
               5%
             </button>
@@ -43,18 +43,15 @@
               50%
             </button>
             <div class="tip-buttons__btn">
-              <form>
-                <input type="text" class="form__input" placeholder="Custom" maxlength="3">
+              <input type="text" class="form__input" placeholder="Custom" maxlength="3">
               </form>
             </div>
         </section>
-        <section class="num-of-ppl grid grid-jc-c grid-tmp-cols">
+        <section class="num-of-ppl">
           <h1>Number of People</h1>
           <div class="num-of-ppl__field flex flex-ai-c">
             <img class="person-icon" src="/app/images/icon-person.svg">
-            <form>
-              <input type="text" id="person__input" class="form__input" placeholder="0">
-            </form>
+            <input type="text" id="person__input" class="form__input" placeholder="0">
           </div>
         </section>
 
