@@ -32,6 +32,7 @@ input[type=text] {
   text-align: right;
   caret-color: #26c0ab;
   color: #00494d;
+  padding: 0 1rem;
   border: 3px solid #00000000;
   border-radius: 4px;
   font-family: 'Space Mono', monospace;
@@ -167,7 +168,8 @@ button:not(:nth-last-child(1)) {
   font-weight: 700;
 }
 
-img.dollar-icon {
+.bill img.dollar-icon {
+  position: absolute;
   margin: 0 1.25rem;
 }
 
@@ -180,10 +182,6 @@ img.dollar-icon {
   height: 3rem;
 }
 
-.tip-buttons__btn .form__input {
-  padding: 0 .625rem;
-}
-
 .tip-buttons__btn:not(:nth-last-child(1)):hover {
   background: rgba(38, 192, 171, 0.4);
   color: #00494d;
@@ -192,5 +190,18 @@ img.dollar-icon {
 .tip-buttons__btn:not(:nth-last-child(1)).active {
   background: #26c0ab;
   color: #00494d;
+}
+
+.num-of-ppl__field {
+  width: 100%;
+  height: 3rem;
+  margin-top: .75rem;
+  background: #f4fafa;
+  border-radius: 4px;
+}
+
+.num-of-ppl img.person-icon {
+  position: absolute;
+  margin: 0 1.25rem;
 }
 /*# sourceMappingURL=style.css.map */
