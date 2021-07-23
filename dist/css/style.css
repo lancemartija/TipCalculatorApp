@@ -16,12 +16,30 @@ body {
   margin: 0;
   font-family: 'Space Mono', monospace;
   font-size: 0.875rem;
+  font-weight: 400;
+  color: #00494d;
+}
+
+h1 {
+  font-size: 0.875rem;
+  margin: 39px 0 0 0;
 }
 
 a,
 a:visited,
 a:hover {
   text-decoration: none;
+}
+
+button:not(:nth-last-child(1)) {
+  background: #00494d;
+  color: white;
+  cursor: pointer;
+  border: 0;
+  border-radius: 4px;
+  font-family: 'Space Mono', monospace;
+  font-size: 1.5rem;
+  font-weight: 700;
 }
 
 .flex {
@@ -71,6 +89,15 @@ a:hover {
       align-content: center;
 }
 
+.grid-tmp-cols-auto-fit {
+  -ms-grid-columns: 148px 148px;
+      grid-template-columns: 148px 148px;
+}
+
+.grid-gap {
+  gap: 1rem;
+}
+
 .main {
   background: #c5e4e7;
   height: 100vh;
@@ -87,12 +114,50 @@ a:hover {
           transform: translateY(-20px);
 }
 
-.main .calculator {
+.main .container {
   width: 100%;
   height: auto;
-  background: #f4fafa;
+  background: white;
   border-radius: 1.5rem;
   -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
           box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+}
+
+.main .container .content {
+  margin: 0 2rem;
+}
+
+.main .container .content__bill--field {
+  width: 100%;
+  height: 3rem;
+  background: #f4fafa;
+  border-radius: 4px;
+}
+
+.main .container .content__bill--field > p {
+  margin: 0 1.25rem 0 0;
+  text-align: right;
+  width: 100%;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.main .container .btn:not(:nth-last-child(1)) {
+  width: 9.25rem;
+  height: 3rem;
+}
+
+.main .container .btn:not(:nth-last-child(1)):hover {
+  background: rgba(38, 192, 171, 0.4);
+  color: #00494d;
+}
+
+.main .container .btn:not(:nth-last-child(1)).active {
+  background: #26c0ab;
+  color: #00494d;
+}
+
+.main .dollar-icon {
+  margin: 0 1.25rem;
 }
 /*# sourceMappingURL=style.css.map */
