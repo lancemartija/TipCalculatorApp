@@ -17,34 +17,36 @@
     <div class="main__logo">spli<br>tter</div>
     <div class="main__container">
       <div class="content__wrapper">
-        <div class="content__bill grid grid-jc-c grid-tmp-cols">
+        <div class="bill grid grid-jc-c grid-tmp-cols">
           <h1>Bill</h1>
-          <div class="content__bill--field flex flex-ai-c">
+          <div class="bill__field flex flex-ai-c">
             <img class="dollar-icon" src="app/images/icon-dollar.svg">
             <p>0.00</p>
           </div>
         </div>
-        <div class="content__buttons">
+        <div class="tip-buttons">
           <h1>Select Tip %</h1>
-          <div class="grid grid-tmp-cols-auto-fit grid-gap">
-            <button id="btn-1" class="btn">
+          <div class="tip-buttons__wrapper grid grid-tmp-cols-auto-fit grid-gap">
+            <button id="btn-1" class="tip-buttons__btn">
               5%
             </button>
-            <button id="btn-2" class="btn">
+            <button id="btn-2" class="tip-buttons__btn">
               10%
             </button>
-            <button id="btn-3" class="btn">
+            <button id="btn-3" class="tip-buttons__btn">
               15%
             </button>
-            <button id="btn-4" class="btn">
+            <button id="btn-4" class="tip-buttons__btn">
               25%
             </button>
-            <button id="btn-5" class="btn">
+            <button id="btn-5" class="tip-buttons__btn">
               50%
             </button>
-            <form class="btn" class="form">
-              <input type="text" class="form__input" placeholder="Custom">
-            </form>
+            <div class="tip-buttons__btn">
+              <form>
+                <input type="text" class="form__input" placeholder="Custom" maxlength="3">
+              </form>
+            </div>
           </div>
 
           Number of People
