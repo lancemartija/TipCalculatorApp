@@ -108,6 +108,11 @@ button:not(:nth-last-child(1)) {
       align-content: center;
 }
 
+.grid-tmp-cols {
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+}
+
 .grid-tmp-cols-auto-fit {
   -ms-grid-columns: 148px 148px;
       grid-template-columns: 148px 148px;
@@ -133,7 +138,7 @@ button:not(:nth-last-child(1)) {
           transform: translateY(-20px);
 }
 
-.main .container {
+.main__container {
   width: 100%;
   height: auto;
   background: white;
@@ -142,18 +147,22 @@ button:not(:nth-last-child(1)) {
           box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
 }
 
-.main .container .content {
+.dollar-icon {
+  margin: 0 1.25rem;
+}
+
+.content__wrapper {
   margin: 0 2rem;
 }
 
-.main .container .content__bill--field {
+.content__bill--field {
   width: 100%;
   height: 3rem;
   background: #f4fafa;
   border-radius: 4px;
 }
 
-.main .container .content__bill--field > p {
+.content__bill--field > p {
   margin: 0 1.25rem 0 0;
   text-align: right;
   width: 100%;
@@ -161,22 +170,18 @@ button:not(:nth-last-child(1)) {
   font-weight: 700;
 }
 
-.main .container .btn:not(:nth-last-child(1)) {
+.content__buttons .btn:not(:nth-last-child(1)) {
   width: 9.25rem;
   height: 3rem;
 }
 
-.main .container .btn:not(:nth-last-child(1)):hover {
+.content__buttons .btn:not(:nth-last-child(1)):hover {
   background: rgba(38, 192, 171, 0.4);
   color: #00494d;
 }
 
-.main .container .btn:not(:nth-last-child(1)).active {
+.content__buttons .btn:not(:nth-last-child(1)).active {
   background: #26c0ab;
   color: #00494d;
-}
-
-.dollar-icon {
-  margin: 0 1.25rem;
 }
 /*# sourceMappingURL=style.css.map */
