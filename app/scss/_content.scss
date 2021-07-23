@@ -1,0 +1,42 @@
+.content {
+  &__wrapper {
+    margin: 0 2rem;
+  }
+
+  &__bill {
+    &--field {
+      width: 100%;
+      height: 3rem;
+      background: $lighter-grayish-cyan;
+      border-radius: 4px;
+
+      >p {
+        margin: 0 1.25rem 0 0;
+        text-align: right;
+        width: 100%;
+
+        font: {
+          size: $font-lg;
+          weight: 700;
+        }
+      }
+    }
+  }
+
+  &__buttons {
+    .btn:not(:nth-last-child(1)) {
+      width: 9.25rem;
+      height: 3rem;
+
+      &:hover {
+        background: rgba($color: $strong-cyan, $alpha: .4);
+        color: $very-dark-cyan;
+      }
+
+      &.active {
+        background: $strong-cyan;
+        color: $very-dark-cyan;
+      }
+    }
+  }
+}
