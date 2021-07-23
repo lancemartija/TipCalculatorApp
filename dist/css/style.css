@@ -147,10 +147,6 @@ button:not(:nth-last-child(1)) {
           box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
 }
 
-.dollar-icon {
-  margin: 0 1.25rem;
-}
-
 .content__wrapper {
   margin: 0 2rem;
 }
@@ -183,5 +179,9 @@ button:not(:nth-last-child(1)) {
 .content__buttons .btn:not(:nth-last-child(1)).active {
   background: #26c0ab;
   color: #00494d;
+}
+
+.dollar-icon {
+  margin: 0 1.25rem;
 }
 /*# sourceMappingURL=style.css.map */
