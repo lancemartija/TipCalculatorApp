@@ -106,6 +106,10 @@ button:not(:nth-last-child(1)) {
     align-content: center;
   }
 
+  &-tmp-cols {
+    grid-template-columns: 1fr;
+  }
+
   &-tmp-cols-auto-fit {
     grid-template-columns: 148px 148px;
   }
