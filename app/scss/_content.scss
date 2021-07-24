@@ -70,6 +70,15 @@
     border-radius: 4px;
   }
 
+  h3:is(:nth-last-child(1)) {
+    visibility: hidden;
+
+    &.warning {
+      visibility: visible;
+      color: $warning;
+    }
+  }
+
   img.person-icon {
     position: absolute;
     margin: 0 1.25rem;
