@@ -20,7 +20,10 @@
     <div class="main__container grid">
       <div class="content__wrapper">
         <section class="bill">
-          <h3>Bill</h3>
+          <div class="flex flex-ai-c flex-jc-sb">
+            <h3>Bill</h3>
+            <h3 id="text-warning-1"></h3>
+          </div>
           <div class="bill__field flex flex-ai-c">
             <img class="dollar-icon" src="app/images/icon-dollar.svg">
             <input type="text" id="bill__input" class="form__input" placeholder="0">
@@ -52,11 +55,11 @@
         <section class="num-of-ppl">
           <div class="flex flex-ai-c flex-jc-sb">
             <h3>Number of People</h3>
-            <h3 id="text-warning">Can't be zero</h3>
+            <h3 id="text-warning-2"></h3>
           </div>
           <div class="num-of-ppl__field flex flex-ai-c">
             <img class="person-icon" src="/app/images/icon-person.svg">
-            <input type="text" id="person__input" class="form__input" placeholder="0">
+            <input type="text" id="num-of-ppl__input" class="form__input" placeholder="0">
           </div>
         </section>
       </div>
