@@ -18,9 +18,7 @@
   }
 
   &__tip-amount {
-    @include breakpoint-down(medium) {
-      margin-bottom: 2rem;
-    }
+    margin-bottom: 2rem;
 
     >h1 {
       color: $strong-cyan;
