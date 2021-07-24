@@ -1,5 +1,9 @@
 .content__wrapper {
   margin: 2rem;
+
+  @include breakpoint-down(small) {
+    margin: 2rem 2rem 0 2rem;
+  }
 }
 
 .bill {
@@ -7,6 +11,7 @@
     width: 100%;
     height: 3rem;
     margin-top: .75rem;
+    margin-bottom: 2.5rem;
     background: $lighter-grayish-cyan;
     border-radius: 4px;
   }
