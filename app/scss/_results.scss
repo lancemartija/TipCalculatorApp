@@ -1,4 +1,6 @@
 .results {
+  position: relative;
+
   @include breakpoint-down(medium) {
     margin: 1.5rem;
   }
@@ -16,6 +18,9 @@
   }
 
   &__tip-amount {
+    @include breakpoint-down(medium) {
+      margin-bottom: 2rem;
+    }
 
     >h1 {
       color: $strong-cyan;
@@ -63,45 +68,50 @@
       }
     }
   }
+}
 
-  .button {
-    &__wrapper {
-      margin: 2.625rem;
-
-      @include breakpoint-down(small) {
-        margin: 1.5rem;
-      }
+.button {
+  &__wrapper {
+    @include breakpoint-up(large) {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      padding: 2.625rem;
     }
 
-    &--reset {
-      background: $strong-cyan;
-      color: $very-dark-cyan;
-      cursor: pointer;
-      text-transform: uppercase;
-      border-radius: 4px;
+    @include breakpoint-down(small) {
+      margin: 1.5rem;
+    }
+  }
 
-      font: {
-        family: 'Space Mono', monospace;
-        size: $font-lg;
-        weight: 700;
-      }
+  &__reset {
+    background: $strong-cyan;
+    color: $very-dark-cyan;
+    cursor: pointer;
+    text-transform: uppercase;
+    border-radius: 4px;
 
-      &:hover {
-        background: $hover-color;
-      }
+    font: {
+      family: 'Space Mono', monospace;
+      size: $font-lg;
+      weight: 700;
+    }
 
-      &:active {
-        background: $hover-color;
-      }
+    &:hover {
+      background: $hover-color;
+    }
 
-      &.disabled {
-        background: rgba($color: $strong-cyan, $alpha: .2);
-        cursor: default;
-      }
+    &:active {
+      background: $hover-color;
+    }
 
-      @include breakpoint-down(medium) {
-        font-size: $font-med;
-      }
+    &.disabled {
+      background: rgba($color: $strong-cyan, $alpha: .2);
+      cursor: default;
+    }
+
+    @include breakpoint-down(medium) {
+      font-size: $font-med;
     }
   }
 }
