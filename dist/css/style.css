@@ -12,12 +12,13 @@ html {
 }
 
 body {
+  background: #c5e4e7;
+  color: #00494d;
   padding: 0;
   margin: 0;
   font-family: 'Space Mono', monospace;
   font-size: 0.875rem;
   font-weight: 400;
-  color: #00494d;
 }
 
 h1 {
@@ -118,27 +119,26 @@ button {
   gap: 1rem;
 }
 
-.main {
-  background: #c5e4e7;
-  height: 100vh;
-}
-
 .main__container {
   -ms-grid-columns: (minmax(23.4375rem, 1fr))[auto-fit];
       grid-template-columns: repeat(auto-fit, minmax(23.4375rem, 1fr));
   width: 100%;
   height: auto;
   background: white;
-  border-radius: 1.5rem;
+  border-radius: 24px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
           box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
 }
 
+@media (max-width: 39.9375em) {
+  .main__container {
+    border-radius: 24px 24px 0 0;
+  }
+}
+
 @media (min-width: 64em) {
   .main__container {
-    max-width: 74rem;
-    margin-left: auto;
-    margin-right: auto;
+    max-width: 70em;
   }
 }
 
@@ -154,6 +154,12 @@ button {
 .logo__splitter > p {
   margin: 0;
   padding: 2.5rem;
+}
+
+@media (min-width: 64em) {
+  .logo__splitter {
+    padding: 2.625rem 0 1rem 0;
+  }
 }
 
 .content__wrapper {
@@ -247,10 +253,8 @@ button {
   }
 }
 
-@media (max-width: 63.9375em) {
-  .results__tip-amount {
-    margin-bottom: 2rem;
-  }
+.results__tip-amount {
+  margin-bottom: 2rem;
 }
 
 .results__tip-amount > h1 {
