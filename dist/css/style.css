@@ -119,6 +119,16 @@ button {
   gap: 1rem;
 }
 
+.attribution {
+  text-align: center;
+  margin: 1rem;
+}
+
+.attribution > a {
+  color: #5e7a7d;
+  text-decoration: underline;
+}
+
 .main__container {
   -ms-grid-columns: (minmax(23.4375rem, 1fr))[auto-fit];
       grid-template-columns: repeat(auto-fit, minmax(23.4375rem, 1fr));
@@ -138,7 +148,7 @@ button {
 
 @media (min-width: 64em) {
   .main__container {
-    max-width: 70em;
+    max-width: 80em;
   }
 }
 
