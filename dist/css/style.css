@@ -129,6 +129,10 @@ button {
   text-decoration: underline;
 }
 
+.attribution > a:hover {
+  color: #26c0ab;
+}
+
 .main__container {
   -ms-grid-columns: (minmax(23.4375rem, 1fr))[auto-fit];
       grid-template-columns: repeat(auto-fit, minmax(23.4375rem, 1fr));
