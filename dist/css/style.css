@@ -117,17 +117,6 @@ button:not(:nth-last-child(1)) {
   height: 100vh;
 }
 
-.main__logo {
-  text-align: center;
-  font-size: 1.5rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 8px;
-  color: #00494d;
-  -webkit-transform: translateY(-20px);
-          transform: translateY(-20px);
-}
-
 .main__container {
   -ms-grid-columns: (minmax(375px, 1fr))[auto-fit];
       grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));
@@ -147,14 +136,35 @@ button:not(:nth-last-child(1)) {
   }
 }
 
+.logo__splitter {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 8px;
+  color: #00494d;
+}
+
+.logo__splitter > p {
+  margin: 0;
+  padding: 2.5rem;
+}
+
 .content__wrapper {
   margin: 2rem;
+}
+
+@media (max-width: 39.9375em) {
+  .content__wrapper {
+    margin: 2rem 2rem 0 2rem;
+  }
 }
 
 .bill__field {
   width: 100%;
   height: 3rem;
   margin-top: .75rem;
+  margin-bottom: 2.5rem;
   background: #f4fafa;
   border-radius: 4px;
 }
@@ -204,5 +214,12 @@ button:not(:nth-last-child(1)) {
   height: auto;
   background: #00494d;
   border-radius: 14px;
+}
+
+@media (max-width: 63.9375em) {
+  .results {
+    padding: 1.5rem;
+    margin: 1.5rem;
+  }
 }
 /*# sourceMappingURL=style.css.map */
