@@ -1,12 +1,107 @@
 .results {
   @include breakpoint-down(medium) {
-    padding: 1.5rem;
     margin: 1.5rem;
   }
 
-  padding: 2.625rem;
   margin: 2rem 1.5rem;
-  height: auto;
   background: $very-dark-cyan;
   border-radius: 14px;
+
+  &__wrapper {
+    margin: 2.625rem;
+
+    @include breakpoint-down(medium) {
+      margin: 2.875rem 1.5rem;
+    }
+  }
+
+  &__tip-amount {
+
+    >h1 {
+      color: $strong-cyan;
+      font-weight: 700;
+
+      @include breakpoint-down(medium) {
+        font-size: $font-lg;
+      }
+    }
+
+    >h2 {
+      color: $white;
+      font-weight: 400;
+
+      >span {
+        color: $dark-grayish-cyan;
+      }
+
+      @include breakpoint-down(medium) {
+        font-size: $font-sm;
+      }
+    }
+  }
+
+  &__total {
+    >h1 {
+      color: $strong-cyan;
+      font-weight: 700;
+
+      @include breakpoint-down(medium) {
+        font-size: $font-lg;
+      }
+    }
+
+    >h2 {
+      color: $white;
+      font-weight: 400;
+
+      >span {
+        color: $dark-grayish-cyan;
+      }
+
+      @include breakpoint-down(small) {
+        font-size: $font-sm;
+      }
+    }
+  }
+
+  .button {
+    &__wrapper {
+      margin: 2.625rem;
+
+      @include breakpoint-down(small) {
+        margin: 1.5rem;
+      }
+    }
+
+    &--reset {
+      background: $strong-cyan;
+      color: $very-dark-cyan;
+      cursor: pointer;
+      text-transform: uppercase;
+      border-radius: 4px;
+
+      font: {
+        family: 'Space Mono', monospace;
+        size: $font-lg;
+        weight: 700;
+      }
+
+      &:hover {
+        background: $hover-color;
+      }
+
+      &:active {
+        background: $hover-color;
+      }
+
+      &.disabled {
+        background: rgba($color: $strong-cyan, $alpha: .2);
+        cursor: default;
+      }
+
+      @include breakpoint-down(medium) {
+        font-size: $font-med;
+      }
+    }
+  }
 }
