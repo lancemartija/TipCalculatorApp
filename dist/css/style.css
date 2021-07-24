@@ -66,7 +66,7 @@ input[type=text]:focus {
   border: 3px solid #26c0ab;
 }
 
-input[type=text]:focus.warning {
+input[type=text].warning {
   border: 3px solid #ff4646;
 }
 
@@ -209,6 +209,15 @@ button {
   margin-bottom: 2.5rem;
   background: #f4fafa;
   border-radius: 4px;
+}
+
+.bill h3:is(:nth-last-child(1)) {
+  visibility: hidden;
+}
+
+.bill h3:is(:nth-last-child(1)).warning {
+  visibility: visible;
+  color: #ff4646;
 }
 
 .bill img.dollar-icon {
