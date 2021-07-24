@@ -23,6 +23,17 @@ body {
 }
 
 h1 {
+  margin: 0;
+  font-size: $font-xlg;
+}
+
+h2 {
+  margin: 0;
+  font-size: $font-med;
+}
+
+h3 {
+  margin: 0;
   font-size: $font-sm;
 }
 
@@ -57,20 +68,10 @@ a:hover {
   text-decoration: none;
 }
 
-button:not(:nth-last-child(1)) {
-  background: $very-dark-cyan;
-  color: $white;
-  cursor: pointer;
-
-  border: 0 {
-    radius: 4px;
-  }
-
-  font: {
-    family: 'Space Mono', monospace;
-    size: $font-lg;
-    weight: 700;
-  }
+button {
+  border: none;
+  height: 3rem;
+  width: 100%;
 }
 
 // flexbox
