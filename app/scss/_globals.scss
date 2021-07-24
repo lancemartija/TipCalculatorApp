@@ -112,3 +112,15 @@ button {
     gap: 1rem;
   }
 }
+
+// attribution
+
+.attribution {
+  text-align: center;
+  margin: 1rem;
+
+  >a {
+    color: $darker-grayish-cyan;
+    text-decoration: underline;
+  }
+}
