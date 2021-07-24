@@ -66,6 +66,10 @@ input[type=text]:focus {
   border: 3px solid #26c0ab;
 }
 
+input[type=text]:focus.warning {
+  border: 3px solid #ff4646;
+}
+
 a,
 a:visited,
 a:hover {
@@ -247,6 +251,15 @@ button {
   margin-top: .75rem;
   background: #f4fafa;
   border-radius: 4px;
+}
+
+.num-of-ppl h3:is(:nth-last-child(1)) {
+  visibility: hidden;
+}
+
+.num-of-ppl h3:is(:nth-last-child(1)).warning {
+  visibility: visible;
+  color: #ff4646;
 }
 
 .num-of-ppl img.person-icon {
