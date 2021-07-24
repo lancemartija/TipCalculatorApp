@@ -1,3 +1,5 @@
+// Button styles when clicked
+
 const button = document.querySelectorAll(".tip-buttons__btn");
 let active = false;
 
@@ -12,4 +14,19 @@ if (button) {
       })
     })
   })
+}
+
+// Input validation for number of people
+
+const numOfPeople = document.querySelector('#person__input');
+const warningText = document.querySelector('#text-warning');
+
+numOfPeople.onkeyup = function () {
+  if (numOfPeople.value === "0") {
+    warningText.classList.add('warning');
+    numOfPeople.classList.add('warning');
+  } else {
+    warningText.classList.remove('warning');
+    numOfPeople.classList.remove('warning');
+  }
 }
