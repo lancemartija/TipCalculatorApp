@@ -21,6 +21,16 @@ body {
   font-weight: 400;
 }
 
+body ::-moz-selection {
+  background: #5e7a7d;
+  color: #f4fafa;
+}
+
+body ::selection {
+  background: #5e7a7d;
+  color: #f4fafa;
+}
+
 h1 {
   margin: 0;
   font-size: 3rem;
