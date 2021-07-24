@@ -22,7 +22,6 @@ body {
 
 h1 {
   font-size: 0.875rem;
-  margin: 2.25rem 0 0 0;
 }
 
 input[type=text] {
@@ -130,6 +129,8 @@ button:not(:nth-last-child(1)) {
 }
 
 .main__container {
+  -ms-grid-columns: (minmax(375px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));
   width: 100%;
   height: auto;
   background: white;
@@ -138,8 +139,16 @@ button:not(:nth-last-child(1)) {
           box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
 }
 
+@media (min-width: 40em) {
+  .main__container {
+    max-width: 74rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 .content__wrapper {
-  margin: 0 2rem;
+  margin: 2rem;
 }
 
 .bill__field {
@@ -187,5 +196,13 @@ button:not(:nth-last-child(1)) {
 .num-of-ppl img.person-icon {
   position: absolute;
   margin: 0 1.25rem;
+}
+
+.results {
+  padding: 2.625rem;
+  margin: 2rem 1.5rem;
+  height: auto;
+  background: #00494d;
+  border-radius: 14px;
 }
 /*# sourceMappingURL=style.css.map */
