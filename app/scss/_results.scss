@@ -1,4 +1,9 @@
 .results {
+  @include breakpoint-down(medium) {
+    padding: 1.5rem;
+    margin: 1.5rem;
+  }
+
   padding: 2.625rem;
   margin: 2rem 1.5rem;
   height: auto;
