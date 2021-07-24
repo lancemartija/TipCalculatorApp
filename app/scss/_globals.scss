@@ -122,5 +122,9 @@ button {
   >a {
     color: $darker-grayish-cyan;
     text-decoration: underline;
+
+    &:hover {
+      color: $strong-cyan;
+    }
   }
 }
