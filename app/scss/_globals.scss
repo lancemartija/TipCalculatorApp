@@ -10,6 +10,8 @@ html {
 }
 
 body {
+  background: $light-grayish-cyan;
+  color: $very-dark-cyan;
   padding: 0;
   margin: 0;
 
@@ -19,7 +21,6 @@ body {
     weight: 400;
   }
 
-  color: $very-dark-cyan;
 }
 
 h1 {
