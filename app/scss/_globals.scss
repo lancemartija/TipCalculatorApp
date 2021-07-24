@@ -64,10 +64,10 @@ input[type=text] {
   &:focus {
     outline: none;
     border: 3px solid $strong-cyan;
+  }
 
-    &.warning {
-      border: 3px solid $warning;
-    }
+  &.warning {
+    border: 3px solid $warning;
   }
 }
 
