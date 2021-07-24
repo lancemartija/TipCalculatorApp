@@ -1,7 +1,9 @@
 .content__wrapper {
+  padding: 1rem;
   margin: 2rem;
 
   @include breakpoint-down(small) {
+    padding: 0;
     margin: 2rem 2rem 0 2rem;
   }
 }
@@ -26,16 +28,28 @@
   &__wrapper {
     @include custom-grid-fit("9.25rem", "1fr");
     margin-top: 1.25rem;
+    margin-bottom: 2.5rem;
     grid-gap: .625rem;
   }
 
   &__btn {
-    height: 3rem;
-
     &:not(:nth-last-child(1)) {
+      background: $very-dark-cyan;
+      color: $white;
+      cursor: pointer;
+
+      border: 0 {
+        radius: 4px;
+      }
+
+      font: {
+        family: 'Space Mono', monospace;
+        size: $font-lg;
+        weight: 700;
+      }
 
       &:hover {
-        background: rgba($color: $strong-cyan, $alpha: .4);
+        background: $hover-color;
         color: $very-dark-cyan;
       }
 
