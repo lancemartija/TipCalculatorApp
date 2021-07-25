@@ -58,6 +58,10 @@ const hasValue = async (element1, element2) => {
       element1.value = null;
       element2.value = null;
       resetButton.classList.add('disabled');
+      textWarning1.classList.remove('warning');
+      textWarning2.classList.remove('warning');
+      billAmount.classList.remove('warning');
+      numOfPeople.classList.remove('warning');
     }
   }
 }
