@@ -57,9 +57,11 @@
         weight: 700;
       }
 
-      &:hover {
-        background: $hover-color;
-        color: $very-dark-cyan;
+      @include breakpoint-up(medium) {
+        &:hover {
+          background: $hover-color;
+          color: $very-dark-cyan;
+        }
       }
 
       &.active {
