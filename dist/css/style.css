@@ -355,7 +355,7 @@ button {
   }
 }
 
-@media (max-width: 39.9375em) {
+@media (max-width: 63.9375em) {
   .button__wrapper {
     padding: 1.5rem;
   }
