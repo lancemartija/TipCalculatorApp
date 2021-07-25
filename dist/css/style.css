@@ -171,23 +171,7 @@ button {
 }
 
 .logo__splitter {
-  text-align: center;
-  font-size: 1.5rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 8px;
-  color: #00494d;
-}
-
-.logo__splitter > p {
-  margin: 0;
-  padding: 2.5rem;
-}
-
-@media (min-width: 64em) {
-  .logo__splitter {
-    padding: 2.625rem 0 1rem 0;
-  }
+  margin: 3rem;
 }
 
 .content__wrapper {
