@@ -77,8 +77,8 @@
       padding: 2.625rem;
     }
 
-    @include breakpoint-down(medium) {
-      margin: 1.5rem;
+    @include breakpoint-down(small) {
+      padding: 1.5rem;
     }
   }
 
