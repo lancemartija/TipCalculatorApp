@@ -25,7 +25,6 @@ const textWarning2 = document.querySelector('#text-warning-2');
 
 const isNumeric = (value) => {
   return !isNaN(parseFloat(value)) && !isNaN(value);
-  // return /^\d+$/.test(value);
 }
 
 const inputValidation = (element, textElement) => {
