@@ -16,7 +16,7 @@ if (button) {
   })
 }
 
-// Input validation
+// Input validation and reset functionality
 
 const billAmount = document.querySelector('#bill__input');
 const textWarning1 = document.querySelector('#text-warning-1');
@@ -49,16 +49,6 @@ const inputValidation = async (element, textElement) => {
   }
 }
 
-billAmount.onkeyup = () => {
-  inputValidation(billAmount, textWarning1);
-  hasValue(numOfPeople, billAmount);
-}
-
-numOfPeople.onkeyup = () => {
-  inputValidation(numOfPeople, textWarning2);
-  hasValue(numOfPeople, billAmount);
-}
-
 const hasValue = async (element1, element2) => {
   if (element1.value === "" || element2.value === "" || !isNumeric(element1.value) || !isNumeric(element2.value)) {
     resetButton.classList.add('disabled');
@@ -70,4 +60,14 @@ const hasValue = async (element1, element2) => {
       resetButton.classList.add('disabled');
     }
   }
+}
+
+billAmount.onkeyup = () => {
+  inputValidation(billAmount, textWarning1);
+  hasValue(numOfPeople, billAmount);
+}
+
+numOfPeople.onkeyup = () => {
+  inputValidation(numOfPeople, textWarning2);
+  hasValue(numOfPeople, billAmount);
 }
