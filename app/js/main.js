@@ -16,18 +16,20 @@ if (button) {
   })
 }
 
-// Input validation for number of people and bill amount
+// Input validation
 
 const billAmount = document.querySelector('#bill__input');
 const textWarning1 = document.querySelector('#text-warning-1');
 const numOfPeople = document.querySelector('#num-of-ppl__input');
 const textWarning2 = document.querySelector('#text-warning-2');
+const resetButton = document.querySelector('#btn-6');
+let isResetBtnDisabled = true;
 
 const isNumeric = (value) => {
   return !isNaN(parseFloat(value)) && !isNaN(value);
 }
 
-const inputValidation = (element, textElement) => {
+const inputValidation = async (element, textElement) => {
   if (element.value === "") {
     textElement.classList.remove('warning');
     element.classList.remove('warning');
@@ -41,7 +43,7 @@ const inputValidation = (element, textElement) => {
       element.classList.remove('warning');
     }
   } else {
-    textElement.innerHTML = 'Should be 1 or higher';
+    textElement.innerHTML = 'Must be a number';
     textElement.classList.add('warning');
     element.classList.add('warning');
   }
@@ -49,8 +51,23 @@ const inputValidation = (element, textElement) => {
 
 billAmount.onkeyup = () => {
   inputValidation(billAmount, textWarning1);
+  hasValue(numOfPeople, billAmount);
 }
 
 numOfPeople.onkeyup = () => {
   inputValidation(numOfPeople, textWarning2);
+  hasValue(numOfPeople, billAmount);
+}
+
+const hasValue = async (element1, element2) => {
+  if (element1.value === "" || element2.value === "" || !isNumeric(element1.value) || !isNumeric(element2.value)) {
+    resetButton.classList.add('disabled');
+  } else {
+    resetButton.classList.remove('disabled');
+    resetButton.onclick = () => {
+      element1.value = null;
+      element2.value = null;
+      resetButton.classList.add('disabled');
+    }
+  }
 }
