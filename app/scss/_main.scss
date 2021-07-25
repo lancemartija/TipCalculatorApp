@@ -18,23 +18,5 @@
 }
 
 .logo__splitter {
-  text-align: center;
-
-  font: {
-    size: $font-lg;
-    weight: 700;
-  }
-
-  text-transform: uppercase;
-  letter-spacing: 8px;
-  color: $very-dark-cyan;
-
-  >p {
-    margin: 0;
-    padding: 2.5rem;
-  }
-
-  @include breakpoint-up(large) {
-    padding: 2.625rem 0 1rem 0;
-  }
+  margin: 3rem;
 }
