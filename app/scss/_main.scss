@@ -1,6 +1,9 @@
 .main {
   &__container {
-    @include custom-grid-fit("23.4375rem", "1fr");
+    @include breakpoint-up(large) {
+      @include custom-grid-fit("23.4375rem", "1fr");
+    }
+
     width: 100%;
     height: auto;
     background: $white;
