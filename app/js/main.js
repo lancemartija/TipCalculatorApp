@@ -50,7 +50,7 @@ const inputValidation = async (element, textElement) => {
 }
 
 const hasValue = async (element1, element2) => {
-  if (element1.value === "" || element2.value === "" || !isNumeric(element1.value) || !isNumeric(element2.value)) {
+  if (element1.value === "" || element2.value === "") {
     resetButton.classList.add('disabled');
   } else {
     resetButton.classList.remove('disabled');
