@@ -98,6 +98,11 @@ const inputValidation = (inputField, warningLabel, resetBtn) => {
       addWarningClass(inputField);
       addWarningClass(warningLabel);
       addWarningMessage1(warningLabel);
+    } else {
+      removeWarningClass(inputField);
+      removeWarningClass(warningLabel);
+      removeWarningMessage1(warningLabel);
+      removeWarningMessage2(warningLabel);
     }
   }
 }
