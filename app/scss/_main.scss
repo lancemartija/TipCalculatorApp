@@ -19,5 +19,9 @@
 }
 
 .logo__splitter {
-  margin: 3rem;
+  margin: 5rem;
+
+  @include breakpoint-down(medium) {
+    margin: 3rem;
+  }
 }
