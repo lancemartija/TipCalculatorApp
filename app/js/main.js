@@ -5,7 +5,7 @@ const customInputField = document.querySelector('#custom__input');
 
 
 // Buttons
-const tipButtons = document.querySelectorAll('#tip-btn'); // includes custom input field
+const tipButtons = document.querySelectorAll('#tip-btn');
 const resetButton = document.querySelector('#reset-btn');
 
 
@@ -83,7 +83,7 @@ const roundUpTo2 = (value) => {
 
 // Reset Button Logic
 const resetBtnLogic = () => {
-  if (billInputField.value === '' && peopleInputField.value === '' && customInputField.value === '' && isActive === false) {
+  if (billInputField.value === '' && peopleInputField.value === '' && customInputField.value === '' && !isActive) {
     addDisableBtnClass(resetButton);
   } else {
     removeDisableBtnClass(resetButton);
@@ -119,19 +119,20 @@ const inputValidation = (inputField, warningLabel) => {
 
 // Compute Function
 const computeTipAmount = () => {
-  if (billInputField.value !== '') {
+  if (billInputField.value !== '' && isNumeric(billInputField.value) && isActive) {
     let val = Number(billInputField.value) * tipAmount;
     tipAmountState.innerHTML = `$${roundUpTo2(val)}`;
     totalPerPerson = roundUpTo2(val);
   } else {
+    totalPerPerson = null;
     tipAmountState.innerHTML = defaultTipAmountState;
+    totalAmountState.innerHTML = defaultTotalAmountState;
   }
 }
 
 const computeTotalAmount = () => {
-  if (peopleInputField.value !== '') {
+  if (peopleInputField.value !== '' && billInputField.value !== '' && isNumeric(peopleInputField.value) && isNumeric(billInputField.value) && isActive) {
     let val = Number(peopleInputField.value) * totalPerPerson;
-    console.log(totalPerPerson);
     totalAmountState.innerHTML = `$${roundUpTo2(val)}`;
   } else {
     totalAmountState.innerHTML = defaultTotalAmountState;
@@ -144,6 +145,7 @@ billInputField.onkeyup = () => {
   resetBtnLogic();
   inputValidation(billInputField, billWarningLabel, resetButton);
   computeTipAmount();
+  computeTotalAmount();
 }
 
 peopleInputField.onkeyup = () => {
@@ -199,16 +201,22 @@ const setTipAmount = (key) => {
     tipAmount = .25;
   } else if (key === 5) {
     customInputField.onkeyup = () => {
+      isActive = true;
       tipAmount = Number(customInputField.value) / 100;
-      inputValidation(customInputField, dummy, resetButton);
       computeTipAmount();
       computeTotalAmount();
+      inputValidation(customInputField, dummy, resetButton);
+      if (customInputField.value === '' || !isNumeric(customInputField.value)) {
+        isActive = false;
+        tipAmountState.innerHTML = defaultTipAmountState;
+        totalAmountState.innerHTML = defaultTotalAmountState;
+      }
       resetBtnLogic();
     }
   }
 }
 
-resetButton.onclick = () => {
+const resetAllValues = () => {
   billInputField.value = null;
   peopleInputField.value = null;
   customInputField.value = null;
@@ -216,15 +224,17 @@ resetButton.onclick = () => {
   totalAmountState.innerHTML = defaultTotalAmountState;
   tipAmount = null;
   isActive = false;
-  removeWarningClass(billInputField); // removes 'warning' CLASS from BILL input field
-  removeWarningClass(billWarningLabel); // removes 'warning' LABEL from BILL input field
-  removeWarningClass(peopleInputField); // removes 'warning' CLASS from NUMBER OF PEOPLE field
-  removeWarningClass(peopleWarningLabel); // removes 'warning' CLASS from NUMBER OF PEOPLE input field
-  removeWarningClass(customInputField); // removes 'warning' CLASS from CUSTOM input field
-  addDisableBtnClass(resetButton); // removes 'disabled' CLASS of RESET button
+  removeWarningClass(billInputField);
+  removeWarningClass(billWarningLabel);
+  removeWarningClass(peopleInputField);
+  removeWarningClass(peopleWarningLabel);
+  removeWarningClass(customInputField);
+  addDisableBtnClass(resetButton);
   if (tipButtons) {
     tipButtons.forEach((btn, i) => {
       btn.classList.remove('active');
     });
   }
 }
+
+resetButton.onclick = resetAllValues;
