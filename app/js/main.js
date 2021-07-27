@@ -14,11 +14,13 @@ const tipAmountLabel = document.querySelector('#tip-amount');
 const totalAmountLabel = document.querySelector('#total');
 const billWarningLabel = document.querySelector('#text-warning-1');
 const peopleWarningLabel = document.querySelector('#text-warning-2');
+const dummy = document.querySelector('#dummy-text-warning');
 
 
 // Default Values
 const defaultTipAmountState = tipAmountLabel.innerHTML;
 const defaultTotalAmountState = totalAmountLabel.innerHTML;
+let isActive = false;
 let tipAmount = 0;
 
 
@@ -39,6 +41,10 @@ const addWarningMessage2 = (element) => {
   element.innerHTML = 'Must be a number';
 }
 
+const toggleActiveStateClass = (element) => {
+  element.classList.toggle('active');
+}
+
 
 // Remove Class Functions
 const removeWarningClass = (element) => {
@@ -55,6 +61,10 @@ const removeWarningMessage1 = (element) => {
 
 const removeWarningMessage2 = (element) => {
   element.innerHTML = null;
+}
+
+const removeActiveStateClass = (element) => {
+  element.classList.remove('active');
 }
 
 
@@ -74,7 +84,7 @@ const roundUpTo2 = (value) => {
 
 // Reset Button Logic
 const resetBtnLogic = () => {
-  if (billInputField.value === '' && peopleInputField.value === '' && customInputField.value === '') {
+  if (billInputField.value === '' && peopleInputField.value === '' && customInputField.value === '' && isActive === false) {
     addDisableBtnClass(resetButton);
   } else {
     removeDisableBtnClass(resetButton);
@@ -83,7 +93,7 @@ const resetBtnLogic = () => {
 
 
 // Input Validation Function
-const inputValidation = (inputField, warningLabel, resetBtn) => {
+const inputValidation = (inputField, warningLabel) => {
   if (inputField.value === '') {
     removeWarningClass(inputField);
     removeWarningClass(warningLabel);
@@ -107,6 +117,7 @@ const inputValidation = (inputField, warningLabel, resetBtn) => {
   }
 }
 
+
 // Onclick/Onkeyup Functions
 billInputField.onkeyup = () => {
   resetBtnLogic();
@@ -120,7 +131,53 @@ peopleInputField.onkeyup = () => {
 
 customInputField.onkeyup = () => {
   resetBtnLogic();
-  inputValidation(customInputField, null, resetButton);
+  inputValidation(customInputField, dummy, resetButton);
+}
+
+if (tipButtons) {
+  tipButtons.forEach((btn1, key) => {
+    btn1.onclick = () => {
+      toggleActiveStateClass(btn1);
+      setTipAmount(key);
+      if (!(btn1.classList.contains('active'))) {
+        isActive = false;
+        tipAmount = null;
+      } else {
+        isActive = true;
+      }
+      resetBtnLogic();
+      console.log(tipAmount);
+      tipButtons.forEach((btn2, keys) => {
+        if (key !== keys) {
+          removeActiveStateClass(btn2);
+        }
+      });
+    }
+  });
+}
+
+const setTipAmount = (key) => {
+  if (key === 0) {
+    tipAmount = .05;
+    customInputField.value = null;
+  } else if (key === 1) {
+    tipAmount = .1;
+    customInputField.value = null;
+  } else if (key === 2) {
+    tipAmount = .15;
+    customInputField.value = null;
+  } else if (key === 3) {
+    tipAmount = .20;
+    customInputField.value = null;
+  } else if (key === 4) {
+    tipAmount = .25;
+    customInputField.value = null;
+  } else if (key === 5) {
+    customInputField.onkeyup = () => {
+      tipAmount = Number(customInputField.value);
+      inputValidation(customInputField, dummy, resetButton);
+    }
+  }
 }
 
 resetButton.onclick = () => {
@@ -129,18 +186,20 @@ resetButton.onclick = () => {
   customInputField.value = null;
   tipAmountLabel.innerHTML = defaultTipAmountState;
   totalAmountLabel.innerHTML = defaultTotalAmountState;
-  tip = 0;
+  tipAmount = null;
+  isActive = false;
   removeWarningClass(billInputField); // removes 'warning' CLASS from BILL input field
   removeWarningClass(billWarningLabel); // removes 'warning' LABEL from BILL input field
   removeWarningClass(peopleInputField); // removes 'warning' CLASS from NUMBER OF PEOPLE field
   removeWarningClass(peopleWarningLabel); // removes 'warning' CLASS from NUMBER OF PEOPLE input field
   removeWarningClass(customInputField); // removes 'warning' CLASS from CUSTOM input field
   addDisableBtnClass(resetButton); // removes 'disabled' CLASS of RESET button
+  if (tipButtons) {
+    tipButtons.forEach((btn, i) => {
+      btn.classList.remove('active');
+    });
+  }
 }
-
-
-
-
 
 // const button = document.querySelectorAll(".tip-buttons__btn");
 // const customInput = document.querySelector('#custom__input');
