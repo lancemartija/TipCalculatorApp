@@ -20,6 +20,7 @@ const dummy = document.querySelector('#dummy-text-warning');
 // Default Values
 const defaultTipAmountState = tipAmountState.innerHTML;
 const defaultTotalAmountState = totalAmountState.innerHTML;
+let totalPerPerson = 0;
 let isActive = false;
 let tipAmount = 0;
 
@@ -75,8 +76,8 @@ const isNumeric = (value) => {
 
 
 // Round Up Numbers to 2
-const roundUpTo2 = (value1, value2) => {
-  return Math.round(((Number(value1) * value2) * 100)) / 100;
+const roundUpTo2 = (value) => {
+  return Math.round((Number(value) * 100)) / 100;
 }
 
 
@@ -115,23 +116,40 @@ const inputValidation = (inputField, warningLabel) => {
   }
 }
 
+
 // Compute Function
-const computeTipAmount = (inputField, state, value) => {
-  state.innerHTML = roundUpTo2(inputField.value, value);
+const computeTipAmount = () => {
+  if (billInputField.value !== '') {
+    let val = Number(billInputField.value) * tipAmount;
+    tipAmountState.innerHTML = `$${roundUpTo2(val)}`;
+    totalPerPerson = roundUpTo2(val);
+  } else {
+    tipAmountState.innerHTML = defaultTipAmountState;
+  }
 }
 
+const computeTotalAmount = () => {
+  if (peopleInputField.value !== '') {
+    let val = Number(peopleInputField.value) * totalPerPerson;
+    console.log(totalPerPerson);
+    totalAmountState.innerHTML = `$${roundUpTo2(val)}`;
+  } else {
+    totalAmountState.innerHTML = defaultTotalAmountState;
+  }
+}
 
 
 // Onclick/Onkeyup Functions
 billInputField.onkeyup = () => {
   resetBtnLogic();
   inputValidation(billInputField, billWarningLabel, resetButton);
-  computeTipAmount(billInputField, tipAmountState, tipAmount);
+  computeTipAmount();
 }
 
 peopleInputField.onkeyup = () => {
   resetBtnLogic();
   inputValidation(peopleInputField, peopleWarningLabel, resetButton);
+  computeTotalAmount();
 }
 
 customInputField.onkeyup = () => {
@@ -150,7 +168,8 @@ if (tipButtons) {
         setTipAmount(key);
       }
       resetBtnLogic();
-      computeTipAmount(billInputField, tipAmountState, tipAmount);
+      computeTipAmount();
+      computeTotalAmount();
       tipButtons.forEach((btn2, keys) => {
         if (key !== keys) {
           removeActiveStateClass(btn2);
@@ -182,7 +201,8 @@ const setTipAmount = (key) => {
     customInputField.onkeyup = () => {
       tipAmount = Number(customInputField.value) / 100;
       inputValidation(customInputField, dummy, resetButton);
-      computeTipAmount(billInputField, tipAmountState, tipAmount);
+      computeTipAmount();
+      computeTotalAmount();
       resetBtnLogic();
     }
   }
