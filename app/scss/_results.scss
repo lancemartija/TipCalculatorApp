@@ -23,6 +23,9 @@
     >h1 {
       color: $strong-cyan;
       font-weight: 700;
+      width: 70%;
+      text-align: right;
+      overflow: hidden;
 
       @include breakpoint-down(medium) {
         font-size: $font-lg;
@@ -47,6 +50,9 @@
     >h1 {
       color: $strong-cyan;
       font-weight: 700;
+      width: 70%;
+      text-align: right;
+      overflow: hidden;
 
       @include breakpoint-down(medium) {
         font-size: $font-lg;
