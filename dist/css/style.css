@@ -292,6 +292,9 @@ button {
 .results__tip-amount > h1 {
   color: #26c0ab;
   font-weight: 700;
+  width: 70%;
+  text-align: right;
+  overflow: hidden;
 }
 
 @media (max-width: 63.9375em) {
@@ -318,6 +321,9 @@ button {
 .results__total > h1 {
   color: #26c0ab;
   font-weight: 700;
+  width: 70%;
+  text-align: right;
+  overflow: hidden;
 }
 
 @media (max-width: 63.9375em) {
