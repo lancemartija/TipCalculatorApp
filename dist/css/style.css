@@ -171,7 +171,13 @@ button {
 }
 
 .logo__splitter {
-  margin: 3rem;
+  margin: 5rem;
+}
+
+@media (max-width: 63.9375em) {
+  .logo__splitter {
+    margin: 3rem;
+  }
 }
 
 .content__wrapper {
