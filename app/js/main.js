@@ -20,7 +20,6 @@ const dummy = document.querySelector('#dummy-text-warning');
 // Default Values
 const defaultTipAmountState = tipAmountState.innerHTML;
 const defaultTotalAmountState = totalAmountState.innerHTML;
-let totalPerPerson = 0;
 let isActive = false;
 let tipAmount = 0;
 
@@ -77,7 +76,7 @@ const isNumeric = (value) => {
 
 // Round Up Numbers to 2
 const roundUpTo2 = (value) => {
-  return Math.round((Number(value) * 100)) / 100;
+  return parseFloat((parseInt(value * 100) / 100).toFixed(2));
 }
 
 
@@ -119,12 +118,10 @@ const inputValidation = (inputField, warningLabel) => {
 
 // Compute Function
 const computeTipAmount = () => {
-  if (billInputField.value !== '' && isNumeric(billInputField.value) && isActive) {
-    let val = Number(billInputField.value) * tipAmount;
+  if (peopleInputField.value !== '' && billInputField.value !== '' && isNumeric(peopleInputField.value) && isNumeric(billInputField.value) && isActive) {
+    let val = (Number(billInputField.value) * tipAmount) / Number(peopleInputField.value);
     tipAmountState.innerHTML = `$${roundUpTo2(val)}`;
-    totalPerPerson = roundUpTo2(val);
   } else {
-    totalPerPerson = null;
     tipAmountState.innerHTML = defaultTipAmountState;
     totalAmountState.innerHTML = defaultTotalAmountState;
   }
@@ -132,9 +129,10 @@ const computeTipAmount = () => {
 
 const computeTotalAmount = () => {
   if (peopleInputField.value !== '' && billInputField.value !== '' && isNumeric(peopleInputField.value) && isNumeric(billInputField.value) && isActive) {
-    let val = Number(peopleInputField.value) * totalPerPerson;
+    let val = ((Number(billInputField.value) * tipAmount) + Number(billInputField.value)) / Number(peopleInputField.value);
     totalAmountState.innerHTML = `$${roundUpTo2(val)}`;
   } else {
+    tipAmountState.innerHTML = defaultTipAmountState;
     totalAmountState.innerHTML = defaultTotalAmountState;
   }
 }
@@ -144,14 +142,15 @@ const computeTotalAmount = () => {
 billInputField.onkeyup = () => {
   resetBtnLogic();
   inputValidation(billInputField, billWarningLabel, resetButton);
-  computeTipAmount();
   computeTotalAmount();
+  computeTipAmount();
 }
 
 peopleInputField.onkeyup = () => {
   resetBtnLogic();
   inputValidation(peopleInputField, peopleWarningLabel, resetButton);
   computeTotalAmount();
+  computeTipAmount();
 }
 
 customInputField.onkeyup = () => {
